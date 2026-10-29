@@ -15,7 +15,7 @@ Awalnya saya bingung membedakan overloading dan overriding di kode ini. Overload
 ## Penggunaan AI
 
 - **Alat yang dipakai:** Tidak menggunakan AI.
-- **Bagian yang dikerjakan:** `Aset.hitungDenda`, override `hitungDenda` di `Ruang`, `Laptop`, `AlatLab`, serta kedua metode `cari` di `KatalogAset`.
-- **Prompt utama:** Tidak ada, karena pengerjaan dilakukan secara mandiri tanpa bantuan AI.
-- **Yang saya ubah atau tolak dari saran AI, dan alasannya:** Tidak ada saran AI yang digunakan. Seluruh keputusan dalam penulisan kode ditentukan secara mandiri berdasarkan pemahaman materi dan kebutuhan program.
+- **Bagian yang dikerjakan:** Aset.hitungDenda, override hitungDenda di Ruang, Laptop, AlatLab, serta kedua metode cari di KatalogAset.
+- **Prompt utama:** Tidak ada
+- **Yang saya ubah atau tolak dari saran AI, dan alasannya:** Tidak ada saran AI yang digunakan. 
 - **Satu hal yang saya pahami lebih baik sekarang:** Saya memahami perbedaan overloading dan overriding. Overloading dipilih berdasarkan parameter saat compile time, sedangkan overriding menggunakan implementasi metode berdasarkan objek sebenarnya saat runtime. Saya juga memahami bahwa `super` dapat digunakan untuk memanggil metode dari kelas induk agar logika program dapat digunakan kembali.
