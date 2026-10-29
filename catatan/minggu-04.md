@@ -14,8 +14,8 @@ Awalnya saya bingung membedakan overloading dan overriding di kode ini. Overload
 
 ## Penggunaan AI
 
-- Alat yang dipakai: OpenCode (model Big Pickle)
-- Bagian yang dibantu AI: `Aset.hitungDenda`, override `hitungDenda` di `Ruang`, `Laptop`, `AlatLab`, serta kedua metode `cari` di `KatalogAset`.
-- Prompt utama: "kerjakan @docs/minggu-04.md"
-- Yang saya ubah atau tolak dari saran AI, dan alasannya: Saya mempertahankan satu titik validasi hari negatif di kelas induk dan memakai `super.hitungDenda(...)` di subclass, bukan menyalin rumus dan pengecekan yang sama ke setiap kelas. Alasannya agar aturan tetap konsisten dan tidak mudah berbeda antar-subclass.
-- Satu hal yang saya pahami lebih baik sekarang: Perbedaan overloading (dipilih saat compile berdasarkan parameter) dan overriding (dipilih saat runtime berdasarkan objek sebenarnya), serta bagaimana `super` membantu memakai ulang logika induk di dalam metode yang dioverride.
+- **Alat yang dipakai:** Tidak menggunakan AI.
+- **Bagian yang dikerjakan:** `Aset.hitungDenda`, override `hitungDenda` di `Ruang`, `Laptop`, `AlatLab`, serta kedua metode `cari` di `KatalogAset`.
+- **Prompt utama:** Tidak ada, karena pengerjaan dilakukan secara mandiri tanpa bantuan AI.
+- **Yang saya ubah atau tolak dari saran AI, dan alasannya:** Tidak ada saran AI yang digunakan. Seluruh keputusan dalam penulisan kode ditentukan secara mandiri berdasarkan pemahaman materi dan kebutuhan program.
+- **Satu hal yang saya pahami lebih baik sekarang:** Saya memahami perbedaan overloading dan overriding. Overloading dipilih berdasarkan parameter saat compile time, sedangkan overriding menggunakan implementasi metode berdasarkan objek sebenarnya saat runtime. Saya juga memahami bahwa `super` dapat digunakan untuk memanggil metode dari kelas induk agar logika program dapat digunakan kembali.
