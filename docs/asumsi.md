@@ -28,3 +28,10 @@ Salin setiap pertanyaan ambigu (nomor 1 sampai 7) ke sini dan jawab. Contoh:
 ## Asumsi lain
 
 Tambahkan di sini keputusan lain yang Anda ambil: rumus denda progresif, perubahan skema database, format error API, dan seterusnya.
+
+## A-01: normalisasi kode dan nama aset
+- Pertanyaan: Apakah kode dan nama aset di-trim dan/atau diubah menjadi huruf besar?
+- Keputusan: Kode dan nama di-trim (spasi awal/akhir dibuang), tetapi huruf besar/kecil tidak diubah.
+- Alasan: Spasi di awal/akhir hampir pasti kesalahan input dan dapat membuat kode yang sama terlihat berbeda. Kapitalisasi dipertahankan agar kode seperti `LP-01` tetap sama dengan data sumber.
+- Dampak ke kode: `Aset.validasiTeks` dipakai oleh konstruktor `Aset` dan `Aset.setNama`.
+- Tes yang membuktikan: `AsetNormalisasiTest` di `core/src/test/java/id/ac/upb/asetpinjam/mahasiswa/`.

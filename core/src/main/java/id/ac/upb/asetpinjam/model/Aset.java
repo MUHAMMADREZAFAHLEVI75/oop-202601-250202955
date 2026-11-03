@@ -20,20 +20,27 @@ public class Aset implements DapatDipinjam {
     private StatusAset status;
     private Kondisi kondisi;
 
-    // TODO minggu 2: field private: kode, nama, status (default TERSEDIA), kondisi (default BAIK).
-
-    /** TODO minggu 2: kode dan nama tidak boleh null atau kosong (IllegalArgumentException). */
+    /**
+     * Membuat aset dengan nilai awal status TERSEDIA dan kondisi BAIK.
+     *
+     * @throws IllegalArgumentException jika kode atau nama null/kosong
+     */
     public Aset(String kode, String nama) {
-        this.kode=kode;validasiTeks(kode,"kode");
-        this.nama=nama;validasiTeks(nama,"nama");
-        this.status=StatusAset.TERSEDIA;
-        this.kondisi=Kondisi.BAIK;
+        this.kode = validasiTeks(kode, "kode");
+        this.nama = validasiTeks(nama, "nama");
+        this.status = StatusAset.TERSEDIA;
+        this.kondisi = Kondisi.BAIK;
     }
-    private String validasiTeks(String teks, String namaField) {
-        if (teks == null || teks.trim().isEmpty()) {
+
+    /**
+     * Memvalidasi teks wajib dan menormalkannya dengan trim.
+     * Huruf tidak diubah agar kode aset tetap sesuai data sumber.
+     */
+    private static String validasiTeks(String teks, String namaField) {
+        if (teks == null || teks.isBlank()) {
             throw new IllegalArgumentException(namaField + " tidak boleh null atau kosong");
         }
-        return teks;
+        return teks.trim();
     }
 
     public String getKode() {
@@ -52,12 +59,12 @@ public class Aset implements DapatDipinjam {
         return kondisi;
     }
 
-    /** TODO minggu 2: nama baru tidak boleh kosong. */
+    /** Mengubah nama aset. Nama baru tidak boleh null atau kosong. */
     public void setNama(String nama) {
-        this.nama= validasiTeks(nama,"nama");
+        this.nama = validasiTeks(nama, "nama");
     }
 
-    /** TODO minggu 2: status tidak boleh null. */
+    /** Mengubah status aset. Status baru tidak boleh null. */
     public void setStatus(StatusAset status) {
         if (status == null) {
             throw new IllegalArgumentException("Status tidak boleh null");
@@ -65,7 +72,7 @@ public class Aset implements DapatDipinjam {
         this.status = status;
     }
 
-    /** TODO minggu 2: kondisi tidak boleh null. */
+    /** Mengubah kondisi aset. Kondisi baru tidak boleh null. */
     public void setKondisi(Kondisi kondisi) {
         if (kondisi == null) {
             throw new IllegalArgumentException("Kondisi tidak boleh null");
