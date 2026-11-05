@@ -14,7 +14,7 @@ Awalnya saya bingung membedakan overloading dan overriding di kode ini. Overload
 
 ## Penggunaan AI
 
-- **Alat yang dipakai:** Tidak menggunakan AI.
+- **Alat yang dipakai:**menggunakan AI anti graviti.
 - **Bagian yang dikerjakan:** Aset.hitungDenda, override hitungDenda di Ruang, Laptop, AlatLab, serta kedua metode cari di KatalogAset.
 - **Prompt utama:** Tidak ada
 - **Yang saya ubah atau tolak dari saran AI, dan alasannya:** Tidak ada saran AI yang digunakan. 
