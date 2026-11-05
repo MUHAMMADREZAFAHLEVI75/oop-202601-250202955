@@ -2,18 +2,32 @@
 
 ## Yang saya kerjakan
 
-Saya melengkapi tiga versi program sapaan yang sama dengan tiga gaya berbeda: `HelloProsedural` memakai fungsi statis, `HelloOOP` memakai class dengan field private, dan `HelloFungsional` memakai lambda yang mengembalikan `Function<String, String>`. Saya juga mengisi `mahasiswa.properties` dengan NIM dan nama saya, lalu menjalankan tes minggu 1 dan memastikan kelima tes hijau.
+Di minggu 1 saya membuat tiga program sapaan dengan cara yang berbeda. Yang pertama `HelloProsedural`, saya isi dengan fungsi statis `sapa` yang langsung mengembalikan teks sapaan. Yang kedua `HelloOOP`, saya buat class dengan field `nama` dan `nim` yang private, lalu teksnya diambil lewat method `sapa()`. Yang ketiga `HelloFungsional`, saya pakai lambda yang mengembalikan `Function<String, String>`.
+
+Saya juga mengisi `mahasiswa.properties` dengan NIM dan nama saya, yaitu 250202955 dan Muhammad Reza Fahlevi. Setelah itu saya jalankan `.\scripts\uji.ps1 -Minggu 1` dan hasilnya 5 tes lulus semua.
 
 ## Keputusan desain
 
-Saya memilih bentuk sapaan satu baris `Hallo Aset-Pinjam <nama> (<NIM>)` dan memakai bentuk yang sama persis di ketiga gaya. Alasannya, tes membandingkan hasil ketiga gaya, jadi kalimatnya harus identik; dengan begitu perbedaan yang tersisa benar-benar hanya cara menulis programnya, bukan isi keluarannya. Pada versi OOP, nama dan NIM saya simpan sebagai field private dan hanya bisa dibaca lewat `sapa()`, sedangkan versi fungsional tidak menyimpan state: NIM diikat saat fungsi dibuat, lalu nama diberikan saat fungsi dipanggil.
+Saya memilih bentuk sapaan `Hallo Aset-Pinjam <nama> (<NIM>)` dan memakainya sama persis di ketiga versi. Alasannya karena tes membandingkan hasil ketiga versi, jadi kalau kalimatnya beda sedikit saja bisa gagal. Dengan begitu saya bisa lebih fokus melihat bedanya di cara menulis kodenya.
 
-Kelebihan dan keterbatasan tiap gaya untuk sistem peminjaman aset:
+Di versi OOP, nama dan NIM saya simpan di field private, jadi tidak bisa diubah langsung dari luar class dan hanya bisa dibaca lewat `sapa()`. Di versi fungsional saya tidak menyimpan data di field. NIM diikat waktu fungsi dibuat, lalu nama diberikan waktu fungsi dipanggil.
 
-- **Prosedural:** kelebihannya sederhana dan mudah diikuti untuk tugas kecil seperti mencetak sapaan atau menghitung denda sederhana. Keterbatasannya, data dan fungsi terpisah sehingga sulit menjaga aturan tetap konsisten saat sistem membesar; menambah jenis aset biasanya berakhir dengan percabangan yang panjang.
-- **OOP:** kelebihannya data dan perilaku dibungkus dalam objek, sehingga entitas seperti `Ruang`, `Laptop`, dan `AlatLab` lebih mudah dimodelkan dan perubahannya terlokalisasi. Keterbatasannya, ada lebih banyak kode pendukung (class, konstruktor, getter) dan hierarki bisa menjadi berlebihan kalau dipakai untuk hal yang sangat kecil.
-- **Fungsional:** kelebihannya fungsi murni mudah diuji dan digabungkan, cocok untuk mengolah atau menyaring daftar aset. Keterbatasannya, status peminjaman yang berubah-ubah kurang alami direpresentasikan tanpa state; konsepnya juga bisa lebih sulit diikuti saat pertama kali dipelajari.
+Kelebihan dan kekurangan tiap gaya untuk sistem peminjaman aset:
+
+- **Prosedural:** gampang dipakai untuk program kecil karena kodenya pendek dan mudah dibaca. Tapi data dan fungsinya terpisah, jadi kalau programnya makin besar saya merasa lebih susah menjaga aturannya tetap sama. Kalau jenis asetnya makin banyak, nanti bisa banyak `if` yang panjang.
+- **OOP:** data dan method ada di dalam satu class, jadi lebih rapi dan gampang dipahami. Cocok untuk membuat objek seperti `Ruang`, `Laptop`, dan `AlatLab`. Kekurangannya, kode yang ditulis jadi lebih banyak karena harus membuat class, konstruktor, dan getter. Kalau dipakai untuk hal yang sangat kecil, malah terasa berlebihan.
+- **Fungsional:** fungsi murni gampang dites dan bisa digabung, jadi cocok untuk mengolah daftar aset. Tapi untuk status peminjaman yang berubah-ubah, saya merasa agak susah karena gaya ini tidak menyimpan data yang berubah-ubah. Konsepnya juga masih agak sulit buat saya yang baru belajar.
 
 ## Kendala
 
-Saya sempat terkendala saat memasang Java dan Apache Maven. Setelah JDK 21 dan Maven terpasang, saya memastikan dengan `java -version` dan `mvn -v`, lalu menjalankan `.\scripts\uji.ps1 -Minggu 1`. Saya juga sempat bingung membedakan gaya prosedural, OOP, dan fungsional karena ketiganya menghasilkan teks yang sama; saya memahaminya dengan melihat perbedaan struktur kode, yaitu fungsi statis, class dengan field private, dan lambda.
+Kendala pertama saya alami waktu memasang Java dan Apache Maven. Setelah JDK 21 dan Maven terpasang, saya cek dengan `java -version` dan `mvn -v` untuk memastikan sudah benar. Setelah itu baru saya jalankan `.\scripts\uji.ps1 -Minggu 1`.
+
+Saya juga sempat bingung membedakan prosedural, OOP, dan fungsional karena hasil teksnya sama semua. Akhirnya saya lihat dari struktur kodenya: prosedural cuma fungsi statis, OOP ada class dengan field private, dan fungsional memakai lambda. Dari situ saya mulai paham kalau yang beda bukan hasilnya, tapi cara menyusun programnya.
+
+## Penggunaan AI
+
+- Alat yang dipakai: Tidak memakai AI.
+- Bagian yang dibantu AI: Tidak ada.
+- Prompt utama: Tidak ada.
+- Yang saya ubah atau tolak dari saran AI, dan alasannya: Tidak ada.
+- Satu hal yang saya pahami lebih baik sekarang: Saya lebih paham perbedaan prosedural, OOP, dan fungsional. Prosedural memakai fungsi statis, OOP membungkus data dan method di dalam class, sedangkan fungsional memakai lambda.
