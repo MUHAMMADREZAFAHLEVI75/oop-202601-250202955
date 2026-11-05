@@ -16,14 +16,15 @@ Saya sempat terkendala saat memasang Java dan Apache Maven. Setelah JDK 21 dan M
 
 ## Penggunaan AI
 
-## Penggunaan dan Proses Pengerjaan
-
-- **Alat yang dipakai:** Visual Studio Code.
-- **Bagian yang dikerjakan:** `Aset.java` yang meliputi konstruktor, validasi, getter, dan setter. Selain itu, saya membuat pengujian `AsetNormalisasiTest`, mencatat keputusan normalisasi pada `docs/asumsi.md` bagian A-01, serta menyusun catatan minggu 2.
+- Alat yang dipakai: Tidak menggunakan AI.
+- Bagian yang dibantu AI: Tidak ada.
+- Prompt utama: Tidak ada.
+Bagian yang dikerjakan:** `Aset.java` yang meliputi konstruktor, validasi, getter, dan setter. Selain itu, saya membuat pengujian `AsetNormalisasiTest`, mencatat keputusan normalisasi pada `docs/asumsi.md` bagian A-01, serta menyusun catatan minggu 2.
 - **Langkah pengerjaan:**
   1. Mengerjakan materi minggu 2 berdasarkan panduan `docs/minggu-02.md` dan `catatan/minggu-02.md` tanpa melakukan commit.
-  2. Melengkapi `Aset.java` dengan field private, validasi kode dan nama, getter/setter, serta nilai awal `TERSEDIA` dan `BAIK`. Saya tidak menambahkan `setKode`.
+  2. Melengkapi `Aset.java` dengan field private, validasi kode dan nama, getter/setter, serta nilai awal `TERSEDIA` dan `BAIK`.
   3. Membuat pengujian untuk memastikan proses normalisasi berjalan sesuai keputusan yang telah ditentukan.
   4. Mencatat keputusan normalisasi pada `docs/asumsi.md` dan melengkapi catatan minggu 2.
-- **Keputusan yang saya ambil:** Saya menggunakan `trim()` untuk menghilangkan spasi di awal dan akhir teks tanpa mengubah huruf menjadi kapital semua. Hal ini dilakukan agar kode aset tetap sesuai dengan data sumber. Saya juga tidak menambahkan `setKode` supaya identitas aset tidak dapat diubah setelah objek dibuat.
-- **Hal yang saya pahami:** Encapsulation bukan hanya tentang membuat field menjadi private, tetapi juga memastikan objek selalu memiliki data yang valid. Validasi perlu dilakukan sebelum nilai field diubah agar ketika setter menerima data yang tidak valid, kondisi objek tetap aman dan tidak mengalami perubahan sebagian.
+- Keputusan yang saya ambil: Saya menggunakan `trim()` untuk menghilangkan spasi di awal dan akhir teks tanpa mengubah huruf menjadi kapital semua. Hal ini dilakukan agar kode aset tetap sesuai dengan data sumber. Saya juga tidak menambahkan `setKode` supaya identitas aset tidak dapat diubah setelah objek dibuat.
+
+
