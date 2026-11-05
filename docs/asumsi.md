@@ -35,3 +35,10 @@ Tambahkan di sini keputusan lain yang Anda ambil: rumus denda progresif, perubah
 - Alasan: Spasi di awal/akhir hampir pasti kesalahan input dan dapat membuat kode yang sama terlihat berbeda. Kapitalisasi dipertahankan agar kode seperti `LP-01` tetap sama dengan data sumber.
 - Dampak ke kode: `Aset.validasiTeks` dipakai oleh konstruktor `Aset` dan `Aset.setNama`.
 - Tes yang membuktikan: `AsetNormalisasiTest` di `core/src/test/java/id/ac/upb/asetpinjam/mahasiswa/`.
+
+## A-02: rumus denda progresif
+- Pertanyaan: Bagaimana denda progresif dihitung untuk keterlambatan lebih dari satu minggu?
+- Keputusan: Denda = denda flat + (denda flat x 25% x jumlah blok 7 hari penuh), dengan blok dihitung memakai pembagian bulat `hariTerlambat / 7`.
+- Alasan: Tambahan per minggu mudah dijelaskan, tetap 0 pada hari ke-0, tidak pernah lebih murah dari denda flat, dan tidak pernah turun saat hari bertambah. Pada hari ke-30 (4 blok penuh) denda menjadi 2x denda flat sehingga keterlambatan panjang benar-benar lebih berat.
+- Dampak ke kode: `DendaProgresif.hitung` memakai `aset.hitungDenda(hariTerlambat)` sebagai denda flat.
+- Tes yang membuktikan: `DendaProgresifTest` di `core/src/test/java/id/ac/upb/asetpinjam/mahasiswa/`.

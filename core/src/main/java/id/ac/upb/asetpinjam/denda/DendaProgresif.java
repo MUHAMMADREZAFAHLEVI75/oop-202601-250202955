@@ -11,8 +11,14 @@ import id.ac.upb.asetpinjam.model.Aset;
  */
 public class DendaProgresif implements AturanDenda {
 
+    /**
+     * Denda dasar ditambah 25% untuk setiap blok 7 hari keterlambatan.
+     * Contoh: 7 hari menjadi 1,25x denda flat, 30 hari menjadi 2x denda flat.
+     */
     @Override
     public long hitung(Aset aset, int hariTerlambat) {
-        throw new UnsupportedOperationException("TODO minggu 5: DendaProgresif.hitung");
+        long dasar = aset.hitungDenda(hariTerlambat);
+        long blokMinggu = hariTerlambat / 7;
+        return dasar + (dasar * blokMinggu * 25 / 100);
     }
 }
